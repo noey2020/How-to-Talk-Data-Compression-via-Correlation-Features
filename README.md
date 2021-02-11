@@ -51,6 +51,32 @@ dimensions than the original one. The orthogonal axes (principal components) of
 the new subspace can be interpreted as the directions of maximum variance given
 the constraint that the new feature axes are orthogonal to each other.
 
+If we use PCA for dimensionality reduction, in matrix terms, we construct a d × k dimensional
+transformation matrix, W, that allows us to map a vector, x, the features of a training
+example, onto a new k-dimensional feature subspace that has fewer dimensions than
+the original d-dimensional feature space. For instance, the process is as follows.
+Suppose we have a feature vector, x:
+
+x = [x1, x2, ... , xd], x is an element of Rd
+
+which is then transformed by a transformation matrix, W is an element of  Rd×k :
+
+xW = z
+
+resulting in the output vector:
+
+z = [z1, z2, ... , zk], z is an element of  Rk
+
+As a result of transforming the original d-dimensional data onto this new
+k-dimensional subspace (typically k << d), the first principal component will have the
+largest possible variance. All consequent principal components will have the largest
+variance given the constraint that these components are uncorrelated (orthogonal)
+to the other principal components - even if the input features are correlated, the
+resulting principal components will be mutually orthogonal (uncorrelated). Note that
+the PCA directions are highly sensitive to data scaling, and we need to standardize
+the features prior to PCA if the features were measured on different scales and we
+want to assign equal importance to all features.
+
 Before looking at the PCA algorithm for dimensionality reduction in more detail,
 let's summarize the approach in a few simple steps:
 
