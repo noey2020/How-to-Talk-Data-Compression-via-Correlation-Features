@@ -127,6 +127,11 @@ X_train_std = sc.fit_transform(X_train)
 
 X_test_std = sc.transform(X_test)
 
+After completing the mandatory preprocessing by executing the preceding code, let's
+advance to the second step: constructing the covariance matrix. The symmetric d × d
+-dimensional covariance matrix, where d is the number of dimensions in the dataset,
+stores the pairwise covariances between the different features.
+
 import numpy as np
 
 cov_mat = np.cov(X_train_std.T)
