@@ -132,6 +132,11 @@ advance to the second step: constructing the covariance matrix. The symmetric d 
 -dimensional covariance matrix, where d is the number of dimensions in the dataset,
 stores the pairwise covariances between the different features.
 
+The eigenvectors of the covariance matrix represent the principal components (the
+directions of maximum variance), whereas the corresponding eigenvalues will define
+their magnitude. In the case of the Wine dataset, we would obtain 13 eigenvectors
+and eigenvalues from the 13 × 13 -dimensional covariance matrix.
+
 import numpy as np
 
 cov_mat = np.cov(X_train_std.T)
