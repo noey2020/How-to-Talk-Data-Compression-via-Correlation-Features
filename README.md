@@ -135,6 +135,12 @@ eigen_vals, eigen_vecs = np.linalg.eig(cov_mat)
 
 print('\nEigenvalues \n%s' % eigen_vals)
 
+Using the numpy.cov function, we computed the covariance matrix of the
+standardized training dataset. Using the linalg.eig function, we performed the
+eigendecomposition, which yielded a vector (eigen_vals) consisting of 13
+eigenvalues and the corresponding eigenvectors stored as columns in a
+13 × 13 -dimensional matrix (eigen_vecs).
+
 # Make a list of (eigenvalue, eigenvector) tuples
 
 eigen_pairs = [(np.abs(eigen_vals[i]), eigen_vecs[:, i])
